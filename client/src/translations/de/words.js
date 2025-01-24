@@ -1,4 +1,4 @@
-var admin_email = "oanapopescu93@gmail.com"
+var admin_email = ""
 var word_bank = {
     salon: "Salon",
     about: "Über uns",

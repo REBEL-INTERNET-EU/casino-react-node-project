@@ -1,13 +1,13 @@
-export const checkWinterMonths = ()=>{
+export const checkWinterMonths = () => {
     let winter = false
     let today = new Date()
-    if(today.getMonth() === 0 || today.getMonth() === 1 || today.getMonth() === 11){ // january, february or december
+    if (today.getMonth() === 0 || today.getMonth() === 1 || today.getMonth() === 11) { // january, february or december
         winter = true
     }
     return winter
 }
 
-export const checkEaster = ()=>{
+export const checkEaster = () => {
     let easter = false
     let today = new Date()
     let currentYear = today.getFullYear()
@@ -23,15 +23,15 @@ export const checkEaster = ()=>{
     let threeDaysAfterOrthodoxEaster = new Date(orthodoxEasterDate)
     threeDaysAfterOrthodoxEaster.setDate(orthodoxEasterDate.getDate() + 3)
 
-    if(today >= threeDaysBeforeCatholicEaster && today <= threeDaysAfterOrthodoxEaster){
-      easter = true
+    if (today >= threeDaysBeforeCatholicEaster && today <= threeDaysAfterOrthodoxEaster) {
+        easter = true
     }
 
     return easter
 }
 
-function Easter(year, type="catholic") {
-    if(type === "catholic"){
+function Easter(year, type = "catholic") {
+    if (type === "catholic") {
         // Gauss algorithm to calculate the date of Easter
         let a = year % 19
         let b = Math.floor(year / 100)
@@ -59,24 +59,24 @@ function Easter(year, type="catholic") {
         let month = Math.floor((d + e + 114) / 31)
         let day = ((d + e + 114) % 31) + 1
         let julianEaster = new Date(year, month - 1, day)
-        
+
         // Find the number of days skipped in the Gregorian calendar
         let gregorianEaster = new Date(julianEaster);
         gregorianEaster.setDate(julianEaster.getDate() + 13)
-    
+
         return new Date(gregorianEaster.getFullYear(), gregorianEaster.getMonth(), gregorianEaster.getDate())
     }
-    
+
 }
 
-export const checkOccasion = (type)=>{
+export const checkOccasion = (type) => {
     let occasion = false
     let today = new Date()
     let day = -1
     let month = -1
     let interval = [0, 0]
 
-    switch(type){
+    switch (type) {
         case "halloween":
             day = 31
             month = 9
@@ -90,21 +90,21 @@ export const checkOccasion = (type)=>{
         default:
     }
 
-    if(day !== -1 && month !== -1){
+    if (day !== -1 && month !== -1) {
         let date_from = new Date()
         date_from.setDate(day)
         date_from.setMonth(month)
         date_from.setDate(date_from.getDate() - interval[0])
-    
+
         let date_to = new Date()
         date_to.setDate(day)
         date_to.setMonth(month)
         date_to.setDate(date_to.getDate() + interval[1])
-    
-        if(today >= date_from && today <= date_to){
+
+        if (today >= date_from && today <= date_to) {
             occasion = true
         }
     }
-  
+
     return occasion
 }

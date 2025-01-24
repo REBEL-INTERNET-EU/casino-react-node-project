@@ -1,5 +1,7 @@
 const express = require("express")
+const cors = require('cors')
 const app = express()
+app.use(cors())
 const bodyParser = require('body-parser')
 
 var http = require('http').createServer(app)
@@ -31,6 +33,7 @@ app.use(googlePayment)
 const { encrypt, decrypt } = require('./utils/crypto')
 const { get_device, get_extra_data, check_streak } = require("./utils/other")
 const { sendEmail, sendVerificationEmail } = require("./utils/mail")
+const email = require('./utils/email')
 const crypto = require('crypto')
 
 const { roulette } = require("./games/roulette")
@@ -60,7 +63,7 @@ var database_config = constants.DATABASE[0]
 // database(database_config).then((result)=>{  
 //   if(result){
 //     let user_found = result.filter((x)=>{
-//       return x.email === "oanapopescu93@gmail.com"
+//       return x.email === ""
 //       // return x.email === "oana.popescu@idriveglobal.com"
 //     })
 //     console.log(user_found)  

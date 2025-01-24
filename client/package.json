@@ -19,7 +19,7 @@
     "keno",
     "rabbit"
   ],
-  "author": "Oana Popescu",
+  "author": "developer",
   "license": "UNLICENSED",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -61,7 +61,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "proxy": "http://localhost:1111",
   "eslintConfig": {
     "extends": [
       "react-app",

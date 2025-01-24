@@ -35,6 +35,3 @@ You can play roulette, blackjack, slots, craps, poker (5 card draw and Texas Hol
 
 ## Screenshot10 - Contact page
 ![Image 4](./server/images/07.png)
-
-## Screenshot11 - my DB and User table
-![Image 4](./server/images/11.png)

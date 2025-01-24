@@ -31,7 +31,7 @@ function App(){
 
   	useEffect(() => {
 		my_console.disable()
-		socket.connect()		
+		socket.connect()
 		return () => {
 			socket.disconnect()
 		}
