@@ -33,7 +33,6 @@ app.use(googlePayment)
 const { encrypt, decrypt } = require('./utils/crypto')
 const { get_device, get_extra_data, check_streak } = require("./utils/other")
 const { sendEmail, sendVerificationEmail } = require("./utils/mail")
-const email = require('./utils/email')
 const crypto = require('crypto')
 
 const { roulette } = require("./games/roulette")
